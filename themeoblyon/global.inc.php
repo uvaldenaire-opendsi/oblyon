@@ -2193,8 +2193,12 @@ select.selectarrowonleft option {
     .minwidth500imp { min-width: 250px !important; }
 }
 
-select.widthcentpercentminusx, span.widthcentpercentminusx:not(.select2-selection):not(.select2-dropdown), input.widthcentpercentminusx {
-    width: calc(100% - 52px) !important;
+select.widthcentpercentminusx, span.widthcentpercentminusx:not(.select2-selection), input.widthcentpercentminusx {
+    <?php if (!empty($conf->global->EASYA_VERSION)) { ?>
+        width: 100% !important;
+    <?php } else { ?>
+        width: calc(100% - 52px) !important;
+    <?php } ?>
     display: inline-block;
 }
 select.widthcentpercentminusxx, span.widthcentpercentminusxx:not(.select2-selection), input.widthcentpercentminusxx {
@@ -7727,31 +7731,9 @@ span.select2.select2-container.select2-container--default {
     border-right: none;
 <?php } ?>
 }
-span.select2.select2-container.select2-container--default {
-<?php if (empty($conf->global->THEME_SHOW_BORDER_ON_INPUT)) { ?>
-    /*border-bottom: solid 1px var(--inputbordercolor);*/
-<?php } ?>
-}
 
-input.select2-input {
-    border-bottom: none ! important;
-}
-.select2-choice {
-    border: none;
-    border-bottom: solid 1px var(--inputbordercolor) !important;	/* required to avoid to lose bottom line when focus is lost on select2. */
-}
-.select2-results .select2-highlighted.optionblue {
-    color: #FFF !important;
-}
-.select2-container .select2-selection--multiple {
-    min-height: 28px !important;
-}
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
-    margin-top: 5px !important;
-    border: none;
-}
 .select2-container--focus span.select2-selection.select2-selection--single {
-    border-bottom: 1px solid var(--inputbordercolor) !important;
+    border-bottom: 1px solid #666 !important;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -7759,17 +7741,10 @@ input.select2-input {
 .blockvmenusearch .select2-container--default .select2-selection--single,
 .blockvmenubookmarks .select2-container--default .select2-selection--single
 {
-    background-color: var(--colorbackvmenu1);
-}
-.select2-container--default .select2-selection--single {
-    background-color: var(--inputbackgroundcolor);
-}
-#blockvmenusearch .select2-container--default .select2-selection--single .select2-selection__placeholder {
-    color: var(--colortextbackvmenu);
+	background-color: var(--inputbackgroundcolor);
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: var(--colortext);
-    /* background-color: var(--inputbackgroundcolor); */
+	color: var(--colortext);
 }
 .select2-default {
     color: #999 !important;
@@ -7809,113 +7784,38 @@ input.select2-input {
     box-shadow: none !important;
 }
 .select2-container--open .select2-dropdown--above {
-    border-bottom: solid 1px var(--inputbordercolor);
+    border-bottom: solid 1px rgba(0,0,0,.2);
 }
 .select2-drop.select2-drop-above.select2-drop-active {
     border-top: 1px solid #ccc;
-    border-bottom: solid 1px var(--inputbordercolor);
+    border-bottom: solid 1px rgba(0,0,0,.2);
 }
 .select2-container--default .select2-selection--single
 {
+	background-color: var(--inputbackgroundcolor);
     outline: none;
-<?php if (empty($conf->global->THEME_SHOW_BORDER_ON_INPUT)) { ?>
     border-top: none;
     border-left: none;
     border-right: none;
-<?php } ?>
-
-    border<?php echo empty($conf->global->THEME_SHOW_BORDER_ON_INPUT) ? '-bottom' : ''; ?>: solid 1px var(--inputbordercolor);
-
+    border-bottom: solid 1px rgba(0,0,0,.2);
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border-radius: 3px;
-}
-.select2-container--focus .select2-container--default .select2-selection--single {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.select2-container--default.select2-container--focus .select2-selection--multiple {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-radius: 0 !important;
 }
 .select2-container--default .select2-selection--multiple {
-    border-bottom: solid 1px var(--inputbordercolor);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 3px;
-    background: var(--inputbackgroundcolor);
-    line-height: normal;
+    border: solid 1px rgba(0,0,0,.2);
+    border-radius: 0 !important;
 }
-.select2-container--default .select2-selection--multiple .select2-selection__rendered {
-    line-height: 1.4em;
-}
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background-color: #ddd;
-    margin-top: 4px !important;
-}
-.select2-selection--multiple input.select2-search__field {
-    border-bottom: none !important;
-}.select2-container--default .select2-selection--single
- {
-     outline: none;
- <?php if (empty($conf->global->THEME_SHOW_BORDER_ON_INPUT)) { ?>
-     border-top: none;
-     border-left: none;
-     border-right: none;
- <?php } ?>
-
-     border<?php echo empty($conf->global->THEME_SHOW_BORDER_ON_INPUT) ? '-bottom' : ''; ?>: solid 1px var(--inputbordercolor);
-
-     -webkit-box-shadow: none !important;
-     box-shadow: none !important;
-     border-radius: 3px;
- }
-.select2-container--focus .select2-container--default .select2-selection--single {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.select2-container--default.select2-container--focus .select2-selection--multiple {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.select2-container--default .select2-selection--multiple {
-    border-bottom: solid 1px var(--inputbordercolor);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 3px;
-    background: var(--inputbackgroundcolor);
-    line-height: normal;
-}
-.select2-container--default .select2-selection--multiple .select2-selection__rendered {
-    line-height: 1.4em;
-}
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background-color: #ddd;
-    margin-top: 4px !important;
-}
-.select2-selection--multiple input.select2-search__field {
-    border-bottom: none !important;
-}
-
 .select2-search__field
 {
     outline: none;
     border-top: none !important;
     border-left: none !important;
     border-right: none !important;
-    border-bottom: solid 1px var(--inputbordercolor) !important;
+    border-bottom: solid 1px rgba(0,0,0,.2) !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
-    /* color: black; */
 }
 .select2-container-active .select2-choice, .select2-container-active .select2-choices
 {
@@ -7925,7 +7825,6 @@ input.select2-input {
     border-bottom: none;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    background-color: var(--colorbackvmenu1);
 }
 .select2-dropdown {
 	border: 1px solid var(--colorboxstatsborder);
@@ -7960,7 +7859,7 @@ input.select2-input {
 }
 div.select2-drop-above
 {
-    background: var(--colorbackvmenu1);
+	background: var(--colorbacklineimpair1) !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }
@@ -7982,17 +7881,13 @@ a span.select2-chosen
 }
 .select2-results .select2-no-results, .select2-results .select2-searching, .select2-results .select2-ajax-error, .select2-results .select2-selection-limit
 {
-    background: var(--colorbackvmenu1);
+    background: #FFFFFF;
 }
 .select2-results {
     max-height:	400px;
 }
-.select2-results__option {
-    word-break: break-word;
-    text-align: <?php echo $left; ?>;
-}
 .select2-container.select2-container-disabled .select2-choice, .select2-container-multi.select2-container-disabled .select2-choices {
-    background-color: var(--colorbackvmenu1);
+    background-color: #FFFFFF;
     background-image: none;
     border: none;
     cursor: default;
