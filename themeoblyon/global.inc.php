@@ -2193,13 +2193,9 @@ select.selectarrowonleft option {
     .minwidth500imp { min-width: 250px !important; }
 }
 
-select.widthcentpercentminusx, span.widthcentpercentminusx:not(.select2-selection), input.widthcentpercentminusx {
-    <?php if (!empty($conf->global->EASYA_VERSION)) { ?>
-        width: 100% !important;
-    <?php } else { ?>
-        width: calc(100% - 52px) !important;
-    <?php } ?>
-    display: inline-block;
+select.widthcentpercentminusx, span.widthcentpercentminusx:not(.select2-selection):not(.select2-dropdown), input.widthcentpercentminusx {
+    width: calc(100% - 52px) !important;
+	display: inline-block;
 }
 select.widthcentpercentminusxx, span.widthcentpercentminusxx:not(.select2-selection), input.widthcentpercentminusxx {
     width: calc(100% - 70px) !important;
