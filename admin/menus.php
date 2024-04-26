@@ -34,7 +34,7 @@
 	require_once '../lib/oblyon.lib.php';
 
 	// Translations *********************************
-	$langs->loadLangs(array('admin', 'oblyon@oblyon', 'opendsi@oblyon'));
+	$langs->loadLangs(array('admin', 'oblyon@oblyon', 'inovea@oblyon'));
 
 	// Access control *******************************
 	if (! $user->admin)				accessforbidden();
@@ -77,7 +77,7 @@
 
 	// Configuration header *************************
 	$head						= oblyon_admin_prepare_head();
-	print dol_get_fiche_head($head, 'menus', $langs->trans('Module113900Name'), 0, 'opendsi@oblyon');
+	print dol_get_fiche_head($head, 'menus', $langs->trans('Module113900Name'), 0, 'inovea@oblyon');
 
 	// setup page goes here *************************
 	// Alert

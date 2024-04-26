@@ -37,7 +37,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
 require_once '../lib/oblyon.lib.php';
 
 // Translations *********************************
-$langs->loadLangs(array('admin', 'oblyon@oblyon', 'opendsi@oblyon'));
+$langs->loadLangs(array('admin', 'oblyon@oblyon', 'inovea@oblyon'));
 
 // Access control *******************************
 if (!$user->admin) {
@@ -73,7 +73,7 @@ print load_fiche_titre($page_name, $linkback);
 
 // Configuration header *************************
 $head						= oblyon_admin_prepare_head();
-print dol_get_fiche_head($head, 'customcss', $langs->trans('Module113900Name'), 0, 'opendsi@oblyon');
+print dol_get_fiche_head($head, 'customcss', $langs->trans('Module113900Name'), 0, 'inovea@oblyon');
 
 $form = new Form($db);
 $formfile = new FormFile($db);
