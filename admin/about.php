@@ -28,10 +28,10 @@
 require_once DOL_DOCUMENT_ROOT . '/core/lib/admin.lib.php';
 dol_include_once('/oblyon/core/modules/modOblyon.class.php');
 dol_include_once('/oblyon/lib/oblyon.lib.php');
-dol_include_once('/oblyon/lib/opendsi_common.lib.php');
+dol_include_once('/oblyon/lib/inovea_common.lib.php');
 
 // Langs
-$langs->loadLangs(array('oblyon@oblyon', 'opendsi@oblyon', 'monogramm@oblyon'));
+$langs->loadLangs(array('oblyon@oblyon', 'inovea@oblyon', 'oldauthors@oblyon'));
 
 // Access control
 if (! $user->admin)
@@ -57,7 +57,7 @@ print load_fiche_titre($langs->trans($page_name), $linkback);
 // Configuration header
 $head = oblyon_admin_prepare_head();
 
-print dol_get_fiche_head($head, 'about', $langs->trans("Module113900Name"), 0, "opendsi@oblyon");
+print dol_get_fiche_head($head, 'about', $langs->trans("Module113900Name"), 0, "inovea@oblyon");
 
 $modClass = new modOblyon($db);
 $oblyonVersion = !empty($modClass->getVersion()) ? $modClass->getVersion() : 'NC';
@@ -82,7 +82,7 @@ print '<form id="ticket" method="POST" target="_blank" action="https://support.e
 print '<input name=message type="hidden" value="'.$supportvalue.'" />';
 print '<input name=email type="hidden" value="'.$user->email.'" />';
 print '<td class="titlefield center"><img alt="Easya Solutions" src="../img/opendsi_dolibarr_preferred_partner.png" /></td>'."\n";
-print '<td class="left"><p>'.$langs->trans("OpenDsiAboutDesc1").' <button type="submit" >'.$langs->trans("OpenDsiAboutDesc2").'</button> '.$langs->trans("OpenDsiAboutDesc3").'</p></td>'."\n";
+print '<td class="left"><p>'.$langs->trans("InoveaAboutDesc1").' <button type="submit" >'.$langs->trans("InoveaAboutDesc2").'</button> '.$langs->trans("InoveaAboutDesc3").'</p></td>'."\n";
 print '</tr>'."\n";
 
 print '</table>'."\n";

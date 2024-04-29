@@ -17,9 +17,9 @@
  */
 
 /**
- *	\file       htdocs/module/lib/opendsi_common.lib.php
+ *	\file       htdocs/module/lib/inovea_common.lib.php
  * 	\ingroup	module
- *	\brief      Common functions opendsi for the module
+ *	\brief      Common functions inovea for the module
  */
 
 /**
@@ -29,7 +29,7 @@
  *
  * @return  string                              Content of ChangeLog
  */
-function opendsi_common_getChangeLog($moduleName)
+function inovea_common_getChangeLog($moduleName)
 {
     global $langs;
     $langs->load("admin");
@@ -65,7 +65,7 @@ function opendsi_common_getChangeLog($moduleName)
             @include_once DOL_DOCUMENT_ROOT . '/core/lib/parsemd.lib.php';
             $content = dolMd2Html($content, 'parsedown', array('doc/' => $moduleUrlPath . '/doc/'));
         } else {
-            $content = opendsi_common_dolMd2Html('codenaf', $content, 'parsedown', array('doc/' => $moduleUrlPath . '/doc/'));
+            $content = inovea_common_dolMd2Html('codenaf', $content, 'parsedown', array('doc/' => $moduleUrlPath . '/doc/'));
         }
 
     }
@@ -83,7 +83,7 @@ function opendsi_common_getChangeLog($moduleName)
  *
  * @return	string                          Parsed content
  */
-function opendsi_common_dolMd2Html($moduleName, $content, $parser='parsedown',$replaceimagepath=null)
+function inovea_common_dolMd2Html($moduleName, $content, $parser='parsedown',$replaceimagepath=null)
 {
     if (is_array($replaceimagepath)) {
         foreach ($replaceimagepath as $key => $val) {
