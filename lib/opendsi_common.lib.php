@@ -1,6 +1,6 @@
 <?php
 /* Copyright (C) 2005-2013  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2017       Open-DSI                <support@open-dsi.fr>
+ * Copyright (C) 2017-2024  Alexandre Spangaro      <alexandre@inovea-conseil.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

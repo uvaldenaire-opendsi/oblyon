@@ -1,6 +1,6 @@
 <?php
 	/************************************************
-	* Copyright (C) 2015-2022  Alexandre Spangaro   <support@open-dsi.fr>
+	* Copyright (C) 2015-2022  Alexandre Spangaro   <alexandre@inovea-conseil.com>
 	* Copyright (C) 2023	   Sylvain Legrand	  <contact@infras.fr>
 	*
 	* This program is free software: you can redistribute it and/or modify

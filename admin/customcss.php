@@ -5,7 +5,7 @@
  * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
  * Copyright (C) 2015      Jean-François Ferry	<jfefe@aternatik.fr>
  * Copyright (C) 2022	   Paul Lepont          <paul@kawagency.fr>
- * Copyright (C) 2022-2023 Alexandre Spangaro   <aspangaro@open-dsi.fr>
+ * Copyright (C) 2022-2023 Alexandre Spangaro   <alexandre@inovea-conseil.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

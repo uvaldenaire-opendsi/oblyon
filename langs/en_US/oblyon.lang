@@ -1,6 +1,6 @@
 # < Oblyon Control Panel - English translation >
-# Copyright (C) 2015       Nicolas Rivera   <nrivera.pro@gmail.com>
-# Copyright (C) 2015-2022  Open-DSI         <support@open-dsi.fr>
+# Copyright (C) 2015       Nicolas Rivera       <nrivera.pro@gmail.com>
+# Copyright (C) 2015-2024  Alexandre Spangaro   <alexandre@inovea-conseil.com>
 #
 Module113900Name   = Oblyon
 Module113900Desc   = Options panel allows you to personalize the Oblyon theme
