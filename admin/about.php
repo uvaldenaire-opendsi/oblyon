@@ -31,7 +31,7 @@ dol_include_once('/oblyon/lib/oblyon.lib.php');
 dol_include_once('/oblyon/lib/inovea_common.lib.php');
 
 // Langs
-$langs->loadLangs(array('oblyon@oblyon', 'inovea@oblyon', 'oldauthors@oblyon'));
+$langs->loadLangs(array('admin','oblyon@oblyon', 'inovea@oblyon', 'oldauthors@oblyon'));
 
 // Access control
 if (! $user->admin)
@@ -67,6 +67,7 @@ $supportvalue.= " * Module : Oblyon"."<br>";
 $supportvalue.= " * Module version : ".$oblyonVersion."<br>";
 $supportvalue.= " * Dolibarr version : ".DOL_VERSION."<br>";
 $supportvalue.= " * Dolibarr version installation initiale : ".$conf->global->MAIN_VERSION_LAST_INSTALL."<br>";
+$supportvalue.= " * Version PHP : ".PHP_VERSION."<br>";
 $supportvalue.= " *****/"."<br><br>";
 $supportvalue.= "Description de votre problème :"."<br>";
 
@@ -78,10 +79,10 @@ print '<table class="centpercent">';
 
 // Easya Solutions
 print '<tr>';
-print '<form id="ticket" method="POST" target="_blank" action="https://support.easya.solutions/create_ticket.php">';
+print '<form id="ticket" method="POST" target="_blank" action="https://erp.inovea-conseil.com/public/ticket/create_ticket.php">';
 print '<input name=message type="hidden" value="'.$supportvalue.'" />';
 print '<input name=email type="hidden" value="'.$user->email.'" />';
-print '<td class="titlefield center"><img alt="Easya Solutions" src="../img/opendsi_dolibarr_preferred_partner.png" /></td>'."\n";
+print '<td class="titlefield center"><img alt="Inovea-conseil" src="../img/object_inovea.png" /></td>'."\n";
 print '<td class="left"><p>'.$langs->trans("InoveaAboutDesc1").' <button type="submit" >'.$langs->trans("InoveaAboutDesc2").'</button> '.$langs->trans("InoveaAboutDesc3").'</p></td>'."\n";
 print '</tr>'."\n";
 
@@ -109,6 +110,14 @@ print '</td></tr>';
 print '<tr>';
 print '<td class="titlefield center"><img alt="Monogramm" width="100px" src="../img/monogramm.png" /></td>'."\n";
 print '<td><b>Mathieu Brunot - Monogramm.io</b>&nbsp;-&nbsp;Développeur';
+print '<br>&nbsp;';
+print '</tr>'."\n";
+
+// Easya Solutions
+print '<tr>';
+print '<td class="titlefield center"><img alt="Easya Solutions" width="100px" src="../img/easya.png" /></td>'."\n";
+print '<td><b>Easya Solutions</b>&nbsp;-&nbsp;Equipes des développeurs';
+print '<br>&nbsp;';
 print '</tr>'."\n";
 
 print '</table>'."\n";

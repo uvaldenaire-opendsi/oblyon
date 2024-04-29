@@ -30,7 +30,7 @@ dol_include_once('/oblyon/lib/oblyon.lib.php');
 dol_include_once('/oblyon/lib/inovea_common.lib.php');
 
 // Langs
-$langs->loadLangs(array('oblyon@oblyon', 'inovea@oblyon', 'oldauthors@oblyon'));
+$langs->loadLangs(array('admin','oblyon@oblyon', 'inovea@oblyon', 'oldauthors@oblyon'));
 
 // Access control
 if (! $user->admin)
