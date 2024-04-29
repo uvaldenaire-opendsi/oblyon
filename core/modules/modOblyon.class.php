@@ -3,7 +3,7 @@
 	* Copyright (C) 2003       Rodolphe Quiedeville <rodolphe@quiedeville.org>
 	* Copyright (C) 2004-2012  Laurent Destailleur  <eldy@users.sourceforge.net>
 	* Copyright (C) 2005-2012  Regis Houssin        <regis.houssin@capnetworks.com>
-	* Copyright (C) 2015-2024  Alexandre Spangaro   <support@open-dsi.fr>
+	* Copyright (C) 2015-2024  Alexandre Spangaro   <alexandre@inovea-conseil.com>
 	* Copyright (C) 2022       Sylvain Legrand      <contact@infras.fr>
 	*
 	* This program is free software: you can redistribute it and/or modify
@@ -132,6 +132,9 @@
 			dolibarr_set_const($this->db,'MAIN_THEME','oblyon', 'chaine', 0, '', $conf->entity);
 			dolibarr_set_const($this->db,'MAIN_MENU_INVERT', getDolGlobalInt('MAIN_MENU_INVERT_OBLYON_SAVE'), 'chaine', 0, '', $conf->entity);
 			dolibarr_del_const($this->db,'MAIN_MENU_INVERT_OBLYON_SAVE', $conf->entity);
+
+			// Désactivé en menu inversé car provoque un chargement html dans la page style.css et empêche le chargement des variables css
+			dolibarr_del_const($this->db,'OBLYON_SHOW_COMPNAME', $conf->entity);
 			return $this->_init($sql, $options);
 		}
 

@@ -1,6 +1,6 @@
 <?php
 	/************************************************
-	* Copyright (C) 2015-2022  Alexandre Spangaro   <support@open-dsi.fr>
+	* Copyright (C) 2015-2022  Alexandre Spangaro   <alexandre@inovea-conseil.com>
 	* Copyright (C) 2022       Sylvain Legrand      <contact@infras.fr>
 	*
 	* This program is free software: you can redistribute it and/or modify
@@ -64,7 +64,7 @@
 	$_SESSION['dol_resetcache']	= dol_print_date(dol_now(), 'dayhourlog');	// Reset cache
 
 	// init variables *******************************
-	$result						= !empty($conf->global->MAIN_MENU_INVERT) && (!empty($conf->global->OBLYON_SHOW_COMPNAME) || !empty($conf->global->OBLYON_HIDE_LEFTMENU)) ? dolibarr_set_const($db, 'OBLYON_FULLSIZE_TOPBAR', 1, 'chaine', 0, 'Oblyon module', $conf->entity) : '';
+	$result						= !empty($conf->global->MAIN_MENU_INVERT) && (/*!empty($conf->global->OBLYON_SHOW_COMPNAME) || */!empty($conf->global->OBLYON_HIDE_LEFTMENU)) ? dolibarr_set_const($db, 'OBLYON_FULLSIZE_TOPBAR', 1, 'chaine', 0, 'Oblyon module', $conf->entity) : '';
 	$result						= !empty($conf->global->OBLYON_HIDE_LEFTMENU) && empty($conf->global->OBLYON_EFFECT_LEFTMENU) ? dolibarr_set_const($db, 'OBLYON_EFFECT_LEFTMENU', 'slide', 'chaine', 0, 'Oblyon module', $conf->entity) : '';
 	$result						= !empty($conf->global->MAIN_MENU_INVERT) && !empty($conf->global->OBLYON_REDUCE_LEFTMENU) ? dolibarr_set_const($db, 'OBLYON_HIDE_LEFTICONS', 0, 'chaine', 0, 'Oblyon module', $conf->entity) : '';
 	$result						= !empty($conf->global->OBLYON_REDUCE_LEFTMENU) && empty($conf->global->OBLYON_EFFECT_REDUCE_LEFTMENU) ? dolibarr_set_const($db, 'OBLYON_EFFECT_REDUCE_LEFTMENU', 'hover', 'chaine', 0, 'Oblyon module', $conf->entity) : '';
@@ -127,8 +127,12 @@
 	$metas		= array(array(3), 'LeftMenu');
 	oblyon_print_liste_titre($metas);
 	$metas		= array(array(), $conf->entity, 0, 0, 1, 0, 0, 0, '', 'menus');
-	oblyon_print_input('OBLYON_SHOW_COMPNAME', 'on_off', $langs->trans('ShowCompanyName'), '', $metas, 2, 1);	// Show Company name
-	$warning	= !empty($conf->global->OBLYON_STICKY_LEFTBAR) ? '<br><span class = "warning">'.$langs->trans('StickyLeftBarWarning').'</span>'.(!empty($conf->global->MAIN_MENU_INVERT) ? '<br><span class = "warning">'.$langs->trans('StickyLeftBarInvertedWarning').'</span>' : '') : '';
+	if (!empty($conf->global->MAIN_MENU_INVERT)) {
+        //oblyon_print_input('OBLYON_SHOW_COMPNAME', 'on_off', $langs->trans('ShowCompanyName'), '', $metas, 2, 1);    // Show Company name
+    } else {
+        oblyon_print_input('OBLYON_SHOW_COMPNAME', 'on_off', $langs->trans('ShowCompanyName'), '', $metas, 2, 1);    // Show Company name
+    }
+    $warning	= !empty($conf->global->OBLYON_STICKY_LEFTBAR) ? '<br><span class = "warning">'.$langs->trans('StickyLeftBarWarning').'</span>'.(!empty($conf->global->MAIN_MENU_INVERT) ? '<br><span class = "warning">'.$langs->trans('StickyLeftBarInvertedWarning').'</span>' : '') : '';
 	$metas		= array(array(), $conf->entity, 0, 0, 1, 0, 0, 0, '', 'menus');
 	oblyon_print_input('OBLYON_STICKY_LEFTBAR', 'on_off', $langs->trans('StickyLeftBar').$warning,	'', $metas, 2, 1);	// Sticky left bar
 	$metas		= array(array(), $conf->entity, 0, 0, 1, 0, 0, 0, '', 'menus');
