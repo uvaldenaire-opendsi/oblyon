@@ -1,6 +1,6 @@
 <?php
 	/************************************************
-	* Copyright (C) 2015-2022  Alexandre Spangaro   <support@open-dsi.fr>
+	* Copyright (C) 2015-2022  Alexandre Spangaro   <alexandre@inovea-conseil.com>
 	* Copyright (C) 2023	   Sylvain Legrand	  <contact@infras.fr>
 	*
 	* This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@
 	require_once '../lib/oblyon.lib.php';
 
 	// Translations *********************************
-	$langs->loadLangs(array('admin', 'oblyon@oblyon', 'opendsi@oblyon'));
+	$langs->loadLangs(array('admin', 'oblyon@oblyon', 'inovea@oblyon'));
 
 	// Access control *******************************
 	if (! $user->admin)			accessforbidden();
@@ -430,7 +430,7 @@
 
 	// Configuration header *************************
 	$head				= oblyon_admin_prepare_head();
-	print dol_get_fiche_head($head, 'colors', $langs->trans('Module113900Name'), 0, 'opendsi@oblyon');
+	print dol_get_fiche_head($head, 'colors', $langs->trans('Module113900Name'), 0, 'inovea@oblyon');
 
 	// setup page goes here *************************
 	print '	<script type = "text/javascript">

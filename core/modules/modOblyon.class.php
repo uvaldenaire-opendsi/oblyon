@@ -3,7 +3,7 @@
 	* Copyright (C) 2003       Rodolphe Quiedeville <rodolphe@quiedeville.org>
 	* Copyright (C) 2004-2012  Laurent Destailleur  <eldy@users.sourceforge.net>
 	* Copyright (C) 2005-2012  Regis Houssin        <regis.houssin@capnetworks.com>
-	* Copyright (C) 2015-2024  Alexandre Spangaro   <support@open-dsi.fr>
+	* Copyright (C) 2015-2024  Alexandre Spangaro   <alexandre@inovea-conseil.com>
 	* Copyright (C) 2022       Sylvain Legrand      <contact@infras.fr>
 	*
 	* This program is free software: you can redistribute it and/or modify
@@ -41,25 +41,24 @@
 		{
 			global $langs, $conf;
 
-			$langs->loadLangs(array('oblyon@oblyon', 'opendsi@oblyon'));
+			$langs->loadLangs(array('oblyon@oblyon', 'inovea@oblyon'));
 			$this->db						= $db;
 			$this->numero					= 113900;											// Unique Id for module
 			$this->name						= preg_replace('/^mod/i', '', get_class($this));	// Module label (no space allowed)
-			$this->editor_name				= '<b>Easya Solutions</b> (Ex Open-Dsi)';
-			$this->editor_web				= 'https://easya.solutions';
-			$this->editor_url				= "https://easya.solutions";
-			$this->editor_email				= 'support@easya.solutions';
+			$this->editor_name				= '<b>Inovea Conseil</b>';
+			$this->editor_web				= 'https://www.inovea-conseil.com';
+			$this->editor_url				= "https://www.inovea-conseil.com";
+			$this->editor_email				= 'support@inovea-conseil.com';
 			$this->url_last_version 		= 'https://raw.githubusercontent.com/aspangaro/oblyon/14.0/htdocs/custom/oblyon/VERSION';
 			$this->rights_class				= $this->name;										// Key text used to identify module (for permissions, menus, etc...)
-			$this->family					= 'easya';											// used to group modules in module setup page
+			$this->family					= 'Inovea Conseil';									// used to group modules in module setup page
 			$this->module_position			= 10;
-			$this->familyinfo				= array('easya' => array('position' => '001', 'label' => $langs->trans("easyaFamily")));
 			$this->module_position			= 1;
 			$this->description				= $langs->trans('Module113900Desc');				// Module description
 			$this->version					= file_get_contents(__DIR__.'/../../VERSION');		// Version : 'development', 'experimental', 'dolibarr' or 'dolibarr_deprecated' or version
 			$this->const_name				= 'MAIN_MODULE_'.strtoupper($this->name);			// llx_const table to save module status enabled/disabled
 			$this->special					= 0;												// Where to store the module in setup page (0=common,1=interface,2=others,3=very specific)
-			$this->picto					= 'opendsi_big@'.$this->name;						// Name of image file used for this module. If in theme => 'pictovalue' ; if in module => 'pictovalue@module' under name object_pictovalue.png
+			$this->picto					= 'inovea@'.$this->name;						// Name of image file used for this module. If in theme => 'pictovalue' ; if in module => 'pictovalue@module' under name object_pictovalue.png
 			$this->module_parts				= array('menus'	=> 1,
 													'js'	=> array('js'	=> '/'.$this->name.'/js/pushy.js'),
 													'css'	=> array('css'	=> ('/'.$this->name.'/css/'.$this->name.'.css'), ('/theme/'.$this->name.'/custom.css.php')),
@@ -132,6 +131,9 @@
 			dolibarr_set_const($this->db,'MAIN_THEME','oblyon', 'chaine', 0, '', $conf->entity);
 			dolibarr_set_const($this->db,'MAIN_MENU_INVERT', getDolGlobalInt('MAIN_MENU_INVERT_OBLYON_SAVE'), 'chaine', 0, '', $conf->entity);
 			dolibarr_del_const($this->db,'MAIN_MENU_INVERT_OBLYON_SAVE', $conf->entity);
+
+			// Désactivé en menu inversé car provoque un chargement html dans la page style.css et empêche le chargement des variables css
+			dolibarr_del_const($this->db,'OBLYON_SHOW_COMPNAME', $conf->entity);
 			return $this->_init($sql, $options);
 		}
 

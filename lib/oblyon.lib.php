@@ -1,6 +1,6 @@
 <?php
 	/************************************************
-	* Copyright (C) 2015-2022  Alexandre Spangaro   <support@open-dsi.fr>
+	* Copyright (C) 2015-2022  Alexandre Spangaro   <alexandre@inovea-conseil.com>
 	* Copyright (C) 2022       Sylvain Legrand      <contact@infras.fr>
 	*
 	* This program is free software: you can redistribute it and/or modify
@@ -91,7 +91,7 @@
 		$h++;
 
         $head[$h][0] = dol_buildpath("/oblyon/admin/changelog.php", 1);
-        $head[$h][1] = $langs->trans("OpenDsiChangeLog");
+        $head[$h][1] = $langs->trans("InoveaChangeLog");
         $head[$h][2] = 'changelog';
         $h++;
 

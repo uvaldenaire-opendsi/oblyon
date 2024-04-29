@@ -1,5 +1,9 @@
 ## Changelog ##
 
+### Version 3.0.1 - Compatibility 14.0.x - 20-alpha (2024/04/29)
+- Fix problem with function Show company name in invert menu (Remove function for the moment)
+- Finish move brand editor to "Inovea-Conseil"
+
 ### Version 3.0.0 - Compatibility 14.0.x - 20-alpha (2024/01/13)
 - Merge theme & custom directory to simplify deployment - Copy of theme directory is made when module Oblyon is enabled
 - Remove old library icomoons

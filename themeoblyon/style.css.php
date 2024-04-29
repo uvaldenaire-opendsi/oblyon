@@ -1,7 +1,7 @@
 <?php
 	/************************************************
-	* Copyright (C) 2015-2022  Alexandre Spangaro <support@open-dsi.fr>
-	* Copyright (C) 2022       Sylvain Legrand    <contact@infras.fr>
+	* Copyright (C) 2015-2024   Alexandre Spangaro   <alexandre@inovea-conseil.com>
+	* Copyright (C) 2022        Sylvain Legrand      <contact@infras.fr>
 	*
 	* This program is free software: you can redistribute it and/or modify
 	* it under the terms of the GNU General Public License as published by
@@ -95,7 +95,8 @@
 	$dol_no_mouse_hover			= $conf->dol_no_mouse_hover;
 	dolibarr_set_const($db, 'THEME_ELDY_ENABLE_PERSONALIZED', 1, 'chaine', 0, 'OblyonTheme', $conf->entity);
 	$useboldtitle				= (isset($conf->global->THEME_ELDY_USEBOLDTITLE) ? $conf->global->THEME_ELDY_USEBOLDTITLE : 0);
-	// Oblyon
+
+    // Oblyon
 	$maincolor					= $conf->global->OBLYON_COLOR_MAIN;						// default value: #0083a2
 	$navlinkcolor				= '#f4f4f4';											// default value: #eee
 	$topmenu_hover				= $maincolor;											// default value: #
@@ -252,6 +253,8 @@
 	print 'toolTipFontColor							= '.$toolTipFontColor."\n";
 	print 'conf->global->THEME_AGRESSIVENESS_RATIO	= '.$conf->global->THEME_AGRESSIVENESS_RATIO." (must be between 0 and 1)\n";
 	print '*/'."\n";
-	require __DIR__.'/global.inc.php';
-	if (is_object($db))	$db->close();
+
+    require __DIR__.'/global.inc.php';
+
+    if (is_object($db))	$db->close();
 ?>

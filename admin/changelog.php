@@ -1,6 +1,6 @@
 <?php
 /* Copyright (C) 2015       Nicolas Rivera      <nrivera.pro@gmail.com>
- * Copyright (C) 2015-2023  Open-DSI            <support@open-dsi.fr>
+ * Copyright (C) 2015-2024  Alexandre Spangaro  <alexandre@inovea-conseil.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,10 +27,10 @@
 // Libraries
 require_once DOL_DOCUMENT_ROOT . '/core/lib/admin.lib.php';
 dol_include_once('/oblyon/lib/oblyon.lib.php');
-dol_include_once('/oblyon/lib/opendsi_common.lib.php');
+dol_include_once('/oblyon/lib/inovea_common.lib.php');
 
 // Langs
-$langs->loadLangs(array('oblyon@oblyon', 'opendsi@oblyon', 'monogramm@oblyon'));
+$langs->loadLangs(array('admin','oblyon@oblyon', 'inovea@oblyon', 'oldauthors@oblyon'));
 
 // Access control
 if (! $user->admin)
@@ -56,7 +56,7 @@ print load_fiche_titre($langs->trans($page_name), $linkback);
 // Configuration header
 $head = oblyon_admin_prepare_head();
 
-print dol_get_fiche_head($head, 'changelog', $langs->trans("Module113900Name"), 0, "opendsi@oblyon");
+print dol_get_fiche_head($head, 'changelog', $langs->trans("Module113900Name"), 0, "inovea@oblyon");
 
 print '<div class="div-table-responsive-no-min">';
 print '<table summary="edit" class="noborder centpercent editmode tableforfield">';
@@ -66,7 +66,7 @@ print $langs->trans("LicenseMessage");
 print '<h2>Bugs / comments</h2>';
 print $langs->trans("AboutMessage");
 
-$changelog = opendsi_common_getChangeLog('oblyon');
+$changelog = inovea_common_getChangeLog('oblyon');
 
 print '<div class="moduledesclong">'."\n";
 print (!empty($changelog) ? $changelog : $langs->trans("NotAvailable"));

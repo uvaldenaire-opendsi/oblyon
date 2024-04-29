@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C) 2013-2016  Nicolas Rivera      <nrivera.pro@gmail.com>
- * Copyright (C) 2015-2022  Open-DSI            <support@open-dsi.fr>
+ * Copyright (C) 2015-2024  Alexandre Spangaro  <alexandre@inovea-conseil.com>
  *
  * Copyright (C) 2010-2013  Laurent Destailleur <eldy@users.sourceforge.net>
  * Copyright (C) 2010       Regis Houssin       <regis.houssin@capnetworks.com>
@@ -89,18 +89,25 @@ function print_oblyon_menu($db, $atarget, $type_user = 0, &$tabMenu, &$menu, $no
         print '</a>'."\n";
         print '</div>'."\n";
 
-        print_end_menu_entry(4);
+        print_end_menu_entry(1);
 	}
 
-    if (getDolGlobalInt('OBLYON_SHOW_COMPNAME') && getDolGlobalString('MAIN_INFO_SOCIETE_NOM'))
-    {
-        if ($menu_invert)
-        {
-            print '<div class="blockvmenusocietyname">';
-            print '<span>'. $conf->global->MAIN_INFO_SOCIETE_NOM .'</span>';
-            print '</div>';
+    // Désactivé en menu inversé car provoque un chargement html dans la page style.css et empêche le chargement des variables css
+    /*
+    if (!empty($conf->global->OBLYON_SHOW_COMPNAME) && !empty($conf->global->MAIN_INFO_SOCIETE_NOM)) {
+        if ($menu_invert) {
+            print "\n".'<!-- Show Company Name on menu -->'."\n";
+            print_start_menu_entry('companyname', 'class="tmenu tmenucompanylogo"', 1);
+
+            print "\n";
+            print '<div class="blockvmenusocietyname">'."\n";
+            print '<span>'. $conf->global->MAIN_INFO_SOCIETE_NOM .'</span>'."\n";
+            print '</div>'."\n";
+
+            print_end_menu_entry(1);
         }
     }
+    */
 
     if (is_array($moredata) && ! empty($moredata['searchform']))	// searchform can contains select2 code or link to show old search form or link to switch on search page
     {
@@ -145,7 +152,7 @@ function print_oblyon_menu($db, $atarget, $type_user = 0, &$tabMenu, &$menu, $no
 
 	// Members
 	$tmpentry = array(
-		'enabled' => (!empty($conf->adherent->enabled)),
+		'enabled' => (!empty($conf->adherent->enabled) || !empty($conf->member->enabled)),
 		'perms' => (!empty($user->rights->adherent->lire)),
 		'module' => 'adherent'
 	);
@@ -736,13 +743,11 @@ function print_left_oblyon_menu($db, $menu_array_before, $menu_array_after, &$ta
         print '</div>'."\n";
 	}
 
-    if (getDolGlobalInt('OBLYON_SHOW_COMPNAME') && getDolGlobalString('MAIN_INFO_SOCIETE_NOM'))
-    {
-        if (! $menu_invert)
-        {
-            print '<div class="blockvmenusocietyname">';
-            print '<span>'. $conf->global->MAIN_INFO_SOCIETE_NOM .'</span>';
-            print '</div>';
+    if (getDolGlobalInt('OBLYON_SHOW_COMPNAME') && getDolGlobalString('MAIN_INFO_SOCIETE_NOM')) {
+        if (! $menu_invert) {
+            print '<div class="blockvmenusocietyname">'."\n";
+            print '<span>'. $conf->global->MAIN_INFO_SOCIETE_NOM .'</span>'."\n";
+            print '</div>'."\n";
         }
     }
 
