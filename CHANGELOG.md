@@ -2,6 +2,7 @@
 
 ### Version 3.0.1 - Compatibility 14.0.x - 20-alpha (2024/04/29)
 - Fix problem with function Show company name in invert menu (Remove function for the moment)
+- Fix Access problem on custom CSS on public page
 - Finish move brand editor to "Inovea-Conseil"
 
 ### Version 3.0.0 - Compatibility 14.0.x - 20-alpha (2024/01/13)
