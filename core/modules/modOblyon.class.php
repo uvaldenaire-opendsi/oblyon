@@ -110,8 +110,8 @@
 			$sql		= array();
 			$this->_load_tables('/'.$this->name.'/sql/');
 			oblyon_restore_module($this->name);
-			// Copy dir custom/oblyon/themeoblyon to theme/oblyon
-			$srcDir		= dol_buildpath('/custom/oblyon/themeoblyon');
+			// Copy dir oblyon/themeoblyon to theme/oblyon
+			$srcDir		= dol_buildpath('/oblyon/themeoblyon');
 			$destDir	= DOL_DOCUMENT_ROOT.'/theme/oblyon';
 			if (dol_is_dir($destDir)) {
 				$result	= dol_delete_dir_recursive($destDir);

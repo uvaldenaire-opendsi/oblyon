@@ -77,7 +77,7 @@ print '<table class="centpercent">';
 //print '<tr class="liste_titre"><td colspan="2">' . $langs->trans("Authors") . '</td>';
 //print '</tr>'."\n";
 
-// Easya Solutions
+// Inovea
 print '<tr>';
 print '<form id="ticket" method="POST" target="_blank" action="https://erp.inovea-conseil.com/public/ticket/create_ticket.php">';
 print '<input name=message type="hidden" value="'.$supportvalue.'" />';

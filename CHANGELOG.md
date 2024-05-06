@@ -2,6 +2,7 @@
 
 ### Version 3.0.2 - Compatibility 14.0.x - 20-alpha (2024/05/01)
 - Update ckeditor configuration
+- Fix deployment from another customdir 
 
 ### Version 3.0.1 - Compatibility 14.0.x - 20-alpha (2024/04/29)
 - Fix problem with function Show company name in invert menu (Remove function for the moment)
