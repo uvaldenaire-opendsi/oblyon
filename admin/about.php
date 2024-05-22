@@ -57,7 +57,7 @@ print load_fiche_titre($langs->trans($page_name), $linkback);
 // Configuration header
 $head = oblyon_admin_prepare_head();
 
-print dol_get_fiche_head($head, 'about', $langs->trans("Module113900Name"), 0, "inovea@oblyon");
+print dol_get_fiche_head($head, 'about', $langs->trans("Module432573Name"), 0, "inovea@oblyon");
 
 $modClass = new modOblyon($db);
 $oblyonVersion = !empty($modClass->getVersion()) ? $modClass->getVersion() : 'NC';

@@ -43,7 +43,7 @@
 
 			$langs->loadLangs(array('oblyon@oblyon', 'inovea@oblyon'));
 			$this->db						= $db;
-			$this->numero					= 113900;											// Unique Id for module
+			$this->numero					= 432573;											// Unique Id for module
 			$this->name						= preg_replace('/^mod/i', '', get_class($this));	// Module label (no space allowed)
 			$this->editor_name				= '<b>Inovea Conseil</b>';
 			$this->editor_web				= 'https://www.inovea-conseil.com';
@@ -54,7 +54,7 @@
 			$this->family					= 'Inovea Conseil';									// used to group modules in module setup page
 			$this->module_position			= 10;
 			$this->module_position			= 1;
-			$this->description				= $langs->trans('Module113900Desc');				// Module description
+			$this->description				= $langs->trans('Module432573Desc');				// Module description
 			$this->version					= file_get_contents(__DIR__.'/../../VERSION');		// Version : 'development', 'experimental', 'dolibarr' or 'dolibarr_deprecated' or version
 			$this->const_name				= 'MAIN_MODULE_'.strtoupper($this->name);			// llx_const table to save module status enabled/disabled
 			$this->special					= 0;												// Where to store the module in setup page (0=common,1=interface,2=others,3=very specific)

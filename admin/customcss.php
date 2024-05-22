@@ -73,7 +73,7 @@ print load_fiche_titre($page_name, $linkback);
 
 // Configuration header *************************
 $head						= oblyon_admin_prepare_head();
-print dol_get_fiche_head($head, 'customcss', $langs->trans('Module113900Name'), 0, 'inovea@oblyon');
+print dol_get_fiche_head($head, 'customcss', $langs->trans('Module432573Name'), 0, 'inovea@oblyon');
 
 $form = new Form($db);
 $formfile = new FormFile($db);
