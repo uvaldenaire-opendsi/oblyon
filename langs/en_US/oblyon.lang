@@ -22,6 +22,7 @@ BankColorizeMovementName1 = Background color for a debit movement
 BankColorizeMovementName2 = Background color for a credit movement
 MenuCatalog               = Catalog
 MenuVAT                   = VAT
+Recruitment               = Recruitment
 
 CustomCSS=Style CSS
 

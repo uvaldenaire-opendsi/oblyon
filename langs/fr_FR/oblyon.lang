@@ -22,6 +22,7 @@ BankColorizeMovementName1 = Couleur de fond pour un mouvement débiteur
 BankColorizeMovementName2 = Couleur de fond pour un mouvement créditeur
 MenuCatalog               = Catalogue
 MenuVAT                   = TVA
+Recruitment               = Recrutement
 
 CustomCSS=Style CSS
 
