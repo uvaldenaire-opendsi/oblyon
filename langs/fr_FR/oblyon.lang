@@ -2,8 +2,8 @@
 # Copyright (C) 2015       Nicolas Rivera       <nrivera.pro@gmail.com>
 # Copyright (C) 2015-2024  Alexandre Spangaro   <alexandre@inovea-conseil.com>
 #
-Module113900Name   = Oblyon
-Module113900Desc   = Panneau d'options qui vous permet de personnaliser le thème Oblyon
+Module432573Name   = Oblyon
+Module432573Desc   = Panneau d'options qui vous permet de personnaliser le thème Oblyon
 
 OblyonParamAction1  = Sauvegarder / Restaurer l'ensemble des paramètres du module
 OblyonParamAction2  = <br>(après une restauration rafraichissez la page (F5) pour visualiser le résultat)
@@ -22,6 +22,7 @@ BankColorizeMovementName1 = Couleur de fond pour un mouvement débiteur
 BankColorizeMovementName2 = Couleur de fond pour un mouvement créditeur
 MenuCatalog               = Catalogue
 MenuVAT                   = TVA
+Recruitment               = Recrutement
 
 CustomCSS=Style CSS
 

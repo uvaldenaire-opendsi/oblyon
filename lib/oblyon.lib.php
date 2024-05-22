@@ -263,7 +263,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 		oblyon_print_colgroup($metas);
 		print '		<tr>
 						<td colspan="2" class="center" style = "font-size: 14px;">
-							<a href = "'.DOL_URL_ROOT.'/document.php?modulepart=oblyon&file=sql/update.'.$conf->entity.'">'.$langs->trans('OblyonParamAction1').' <b><span color = "#D51123">'.$langs->trans('Module113900Name').'</span></b> <span size = "2">'.$langs->trans('OblyonParamAction2').'</span></a>
+							<a href = "'.DOL_URL_ROOT.'/document.php?modulepart=oblyon&file=sql/update.'.$conf->entity.'">'.$langs->trans('OblyonParamAction1').' <b><span color = "#D51123">'.$langs->trans('Module432573Name').'</span></b> <span size = "2">'.$langs->trans('OblyonParamAction2').'</span></a>
 						</td>
 						<td class="center"><button class = "butActionBackup" type = "submit" value = "bkupParams" name = "action">'.$langs->trans('OblyonParamBkup').'</button></td>
 						<td class="center"><button class = "butActionBackup" type = "submit" value = "restoreParams" name = "action">'.$langs->trans('OblyonParamRestore').'</button></td>

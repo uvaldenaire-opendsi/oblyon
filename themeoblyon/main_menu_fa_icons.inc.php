@@ -85,7 +85,7 @@
 }
 
 .icon--margins:before {
-    content: '\f643';
+    content: '\f201';
 }
 
 .icon--project:before,
@@ -128,6 +128,10 @@
     content: '\f508';
 }
 
+.icon--hrm_sm:before {
+    content: '\f61f';
+}
+
 .icon--recruitmentjobposition:before {
     content: '\f47f';
 }
@@ -136,7 +140,15 @@
     content: '\f4c4';
 }
 
-.icon--ticket:before{
+.icon--knowledgemanagement_knowledgerecord:before {
+    content: '\f3ff';
+}
+
+.icon--knowledgemanagement_knowledgerecord {
+    transform: rotate(90deg);
+}
+
+.icon--ticket:before {
     content: '\f3ff';
 }
 
@@ -263,6 +275,10 @@
 
 .icon--webhost:before {
     content: '\f233';
+}
+
+.icon--devtools_modulebuilder:before {
+    content: '\f188';
 }
 
 /* Secondary Nav */

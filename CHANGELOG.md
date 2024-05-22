@@ -1,5 +1,12 @@
 ## Changelog ##
 
+### Version 3.0.2 - Compatibility 14.0.x - 20-alpha (2024/05/22)
+- Update ckeditor configuration
+- Fix deployment from another customdir 
+- Add some missing link on menu (Module skills & holiday)
+- Add some missing icons on menu (Module skills, knowledge management, builder, agenda)
+- Add translation for missing label recruitment in core
+
 ### Version 3.0.1 - Compatibility 14.0.x - 20-alpha (2024/04/29)
 - Fix problem with function Show company name in invert menu (Remove function for the moment)
 - Fix Access problem on custom CSS on public page
@@ -14,8 +21,8 @@
 
 ### Version 2.3.0 - Compatibility 14.0.x - 19-alpha (2023/11/12)
 - NEW Use a lot of new color variables for compatibility with DARK_MODE
-  - Add a lot of variables instead of hard coded values.
-  - Add SQL constants for updates
+- Add a lot of variables instead of hard coded values.
+- Add SQL constants for updates
 - NEW system of extensions for external modules
 
 ### Version 2.2.12 - Compatibility 14.0.x - 19-alpha (2024/07/01)

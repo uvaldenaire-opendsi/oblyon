@@ -57,7 +57,7 @@ print load_fiche_titre($langs->trans($page_name), $linkback);
 // Configuration header
 $head = oblyon_admin_prepare_head();
 
-print dol_get_fiche_head($head, 'about', $langs->trans("Module113900Name"), 0, "inovea@oblyon");
+print dol_get_fiche_head($head, 'about', $langs->trans("Module432573Name"), 0, "inovea@oblyon");
 
 $modClass = new modOblyon($db);
 $oblyonVersion = !empty($modClass->getVersion()) ? $modClass->getVersion() : 'NC';
@@ -77,7 +77,7 @@ print '<table class="centpercent">';
 //print '<tr class="liste_titre"><td colspan="2">' . $langs->trans("Authors") . '</td>';
 //print '</tr>'."\n";
 
-// Easya Solutions
+// Inovea
 print '<tr>';
 print '<form id="ticket" method="POST" target="_blank" action="https://erp.inovea-conseil.com/public/ticket/create_ticket.php">';
 print '<input name=message type="hidden" value="'.$supportvalue.'" />';

@@ -70,7 +70,7 @@
 
 	// Configuration header *************************
 	$head						= oblyon_admin_prepare_head();
-	print dol_get_fiche_head($head, 'options', $langs->trans('Module113900Name'), 0, 'inovea@oblyon');
+	print dol_get_fiche_head($head, 'options', $langs->trans('Module432573Name'), 0, 'inovea@oblyon');
 
 	// setup page goes here *************************
 	$easyaVersion = (float) !empty($conf->global->EASYA_VERSION) ? $conf->global->EASYA_VERSION : '';
