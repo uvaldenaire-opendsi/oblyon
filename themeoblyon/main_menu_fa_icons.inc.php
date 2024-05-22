@@ -85,7 +85,7 @@
 }
 
 .icon--margins:before {
-    content: '\f643';
+    content: '\f201';
 }
 
 .icon--project:before,
