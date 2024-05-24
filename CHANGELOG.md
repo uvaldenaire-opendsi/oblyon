@@ -1,5 +1,11 @@
 ## Changelog ##
 
+### Version 3.0.3 - Compatibility 14.0.x - 20-alpha (2024/05/24)
+- Fix Contract expired services menu link (From Dolibarr 18.0.x)
+- FIX can not show group when MULTICOMPANY_TRANSVERSE_MODE
+- Move Import menu before export menu
+- Move compatibility to minimum Dolibarr 18.0 (Easya 2024) for Easya distribution
+
 ### Version 3.0.2 - Compatibility 14.0.x - 20-alpha (2024/05/22)
 - Update ckeditor configuration
 - Fix deployment from another customdir 
