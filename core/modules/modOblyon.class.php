@@ -42,6 +42,9 @@
 			global $langs, $conf;
 
 			$langs->loadLangs(array('oblyon@oblyon', 'inovea@oblyon'));
+
+			$easyaVersion = (float) !empty($conf->global->EASYA_VERSION) ? $conf->global->EASYA_VERSION : '';
+
 			$this->db						= $db;
 			$this->numero					= 432573;											// Unique Id for module
 			$this->name						= preg_replace('/^mod/i', '', get_class($this));	// Module label (no space allowed)
@@ -72,12 +75,18 @@
 			$this->depends					= array();											// List of modules id that must be enabled if this module is enabled
 			$this->requiredby				= array();											// List of modules id to disable if this one is disabled
 			$this->conflictwith				= array();											// List of modules id this module is in conflict with
-			$this->phpmin					= array(7, 4);										// Minimum version of PHP required by module
+			$this->phpmin					= array(7, 1);										// Minimum version of PHP required by module
       		$this->need_dolibarr_version	= array(14,0);										// Minimum version of Dolibarr required by module
+			if ($easyaVersion >= '2024') {
+				$easya_info = json_decode(file_get_contents(__DIR__ . '/../../.easya_info.json'));
+				$this->phpmin = explode('.', $easya_info->php_min_version);                    // Minimum version of PHP required by module
+				$this->need_dolibarr_version = explode('.', $easya_info->dlb_min_version);    // Minimum version of Dolibarr required by module
+			}
 			$this->langfiles				= array($this->name.'@'.$this->name);
 			$this->const					= array();											// List of particular constants to add when module is enabled
+
 			// WIP - Remove classic Dolibarr tabs to avoid a theme change problem (Only available > 15.0.x)
-			$easyaVersion = (float) !empty($conf->global->EASYA_VERSION) ? $conf->global->EASYA_VERSION : '';
+
     		if ($easyaVersion >= '2022.5.2' || (float) DOL_VERSION >= 16.0) {
 				$this->tabs = array(
 					//'ihm_admin:-template',
