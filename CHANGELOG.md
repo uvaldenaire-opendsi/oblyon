@@ -1,7 +1,6 @@
 ## Changelog ##
 
-### Version 3.0.4 - Compatibility 14.0.x - 20.0.x (2024/06/27)
-- Add landing page (Thanks @altairis-tof)
+### Version 3.0.4 - Compatibility 14.0.x - 20.0.x (2024/07/03)
 - Add CSS for drag & drop card feature
 - Fix menu orders (customer and supplier), problem on search_billed
 - If Easya version detected, force json information for dlb_min_version & php_min_version
