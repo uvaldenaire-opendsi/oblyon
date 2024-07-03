@@ -8,12 +8,19 @@ if (!defined('ISLOADEDBYSTEELSHEET')) die('Must be call by steelsheet'); ?>
 /* Buttons for actions                                                            */
 /* ============================================================================== */
 
-div.divButAction {
+/*div.divButAction {
     margin-bottom: 1.4em;
-}
+}*/
 div.tabsAction > a.butAction, div.tabsAction > a.butActionRefused, div.tabsAction > a.butActionDelete,
-div.tabsAction > span.butAction, div.tabsAction > span.butActionRefused, div.tabsAction > span.butActionDelete {
+div.tabsAction > span.butAction, div.tabsAction > span.butActionRefused, div.tabsAction > span.butActionDelete,
+div.tabsAction > div.divButAction > span.butAction,
+div.tabsAction > div.divButAction > span.butActionDelete,
+div.tabsAction > div.divButAction > span.butActionRefused,
+div.tabsAction > div.divButAction > a.butAction,
+div.tabsAction > div.divButAction > a.butActionDelete,
+div.tabsAction > div.divButAction > a.butActionRefused {
     margin-bottom: 1.4em !important;
+    margin-right: 0 !important;
 }
 div.tabsActionNoBottom > a.butAction, div.tabsActionNoBottom > a.butActionRefused {
     margin-bottom: 0 !important;
@@ -22,13 +29,18 @@ div.tabsActionNoBottom > a.butAction, div.tabsActionNoBottom > a.butActionRefuse
 span.butAction, span.butActionDelete {
     cursor: pointer;
 }
-
+.paginationafterarrows .butAction {
+    font-size: 0.9em;
+}
 .butAction, .cke_dialog_ui_button_ok {
-	background: <?php print $colorButtonAction1; ?> !important;
+    background: <?php print $colorButtonAction1; ?> !important;
+}
+:not(.center) > .butActionRefused:last-child, :not(.center) > .butAction:last-child, :not(.center) > .butActionDelete:last-child {
+    margin-<?php echo $right; ?>: 0px !important;
 }
 .butActionRefused, .butAction, .butAction:link, .butAction:visited, .butAction:hover, .butAction:active, .butActionDelete, .butActionDelete:link, .butActionDelete:visited, .butActionDelete:hover, .butActionDelete:active {
     text-decoration: none;
-    /* text-transform: capitalize; */
+    /* text-transform: uppercase; */
     font-weight: bold;
 
     margin: 0em <?php echo ($dol_optimize_smallscreen ? '0.6' : '0.9'); ?>em !important;
@@ -75,18 +87,6 @@ span.butActionNewRefused>span.fa-list-alt, span.butActionNewRefused>span.fa-list
 	padding-left: 0px;
 }
 
-/*a.butActionNew>span.fa-plus-circle, a.butActionNew>span.fa-plus-circle:hover,
-span.butActionNew>span.fa-plus-circle, span.butActionNew>span.fa-plus-circle:hover,
-a.butActionNewRefused>span.fa-plus-circle, a.butActionNewRefused>span.fa-plus-circle:hover,
-span.butActionNewRefused>span.fa-plus-circle, span.butActionNewRefused>span.fa-plus-circle:hover,
-a.butActionNew>span.fa-list-alt, a.butActionNew>span.fa-list-alt:hover,
-span.butActionNew>span.fa-list-alt, span.butActionNew>span.fa-list-alt:hover,
-a.butActionNewRefused>span.fa-list-alt, a.butActionNewRefused>span.fa-list-alt:hover,
-span.butActionNewRefused>span.fa-list-alt, span.butActionNewRefused>span.fa-list-alt:hover,
-a.butActionNew>span.fa-comment-dots, a.butActionNew>span.fa-comment-dots:hover,
-span.butActionNew>span.fa-comment-dots, span.butActionNew>span.fa-comment-dots:hover,
-a.butActionNewRefused>span.fa-comment-dots, a.butActionNewRefused>span.fa-comment-dots:hover,
-span.butActionNewRefused>span.fa-comment-dots, span.butActionNewRefused>span.fa-comment-dots:hover,*/
 a.butActionNew>span.fa, a.butActionNew>span.fa:hover,
 span.butActionNew>span.fa, span.butActionNew>span.fa:hover,
 a.butActionNewRefused>span.fa, a.butActionNewRefused>span.fa:hover,
@@ -197,11 +197,16 @@ TITLE BUTTON
     font-weight: 300;
 }
 
-.btnTitle > .btnTitle-icon{
+a.btnTitle.btnTitleSelected {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.btnTitle > .btnTitle-icon {
 
 }
 
-.btnTitle > .btnTitle-label{
+.btnTitle > .btnTitle-label {
     color: #666666;
 }
 
@@ -258,7 +263,23 @@ div.pagination li:first-child a.btnTitle{
 	}
 }
 
-<?php if (!empty($conf->global->MAIN_BUTTON_HIDE_UNAUTHORIZED) && (!$user->admin)) { ?>
+/* rule to reduce top menu - 3rd reduction: The menu for user is on left */
+@media only screen and (max-width: <?php echo !getDolGlobalString('THEME_ELDY_WITDHOFFSET_FOR_REDUC3') ? round($nbtopmenuentries * 47, 0) + 130 : $conf->global->THEME_ELDY_WITDHOFFSET_FOR_REDUC3; ?>px)	/* reduction 3 */
+{
+    .butAction, .butActionRefused, .butActionDelete {
+        font-size: 0.9em;
+    }
+}
+
+/* smartphone */
+@media only screen and (max-width: 767px)
+{
+    .butAction, .butActionRefused, .butActionDelete {
+        font-size: 0.85em;
+    }
+}
+
+<?php if (getDolGlobalString('MAIN_BUTTON_HIDE_UNAUTHORIZED') && (!$user->admin)) { ?>
 .butActionRefused, .butActionNewRefused, .btnTitle.refused {
     display: none !important;
 }
