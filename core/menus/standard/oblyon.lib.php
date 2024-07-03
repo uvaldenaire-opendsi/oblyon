@@ -50,6 +50,13 @@ function print_oblyon_menu($db, $atarget, $type_user = 0, &$tabMenu, &$menu, $no
 	$mainmenu = (empty($_SESSION["mainmenu"]) ? '' : $_SESSION["mainmenu"]);
 	$leftmenu = (empty($_SESSION["leftmenu"]) ? '' : $_SESSION["leftmenu"]);
 
+	$landingpage = (empty($user->conf->MAIN_LANDING_PAGE) ? (!getDolGlobalString('MAIN_LANDING_PAGE') ? '' : $conf->global->MAIN_LANDING_PAGE) : $user->conf->MAIN_LANDING_PAGE);
+	if (! empty($landingpage)) {
+		$landingpage = dol_buildpath($landingpage, 1);
+	} else {
+		$landingpage = '/index.php?mainmenu=home&amp;leftmenu=home';
+	}
+
 	$id = 'mainmenu';
 	$listofmodulesforexternal = explode(',', $conf->global->MAIN_MODULES_FOR_EXTERNAL);
 
@@ -146,9 +153,9 @@ function print_oblyon_menu($db, $atarget, $type_user = 0, &$tabMenu, &$menu, $no
     $chaine=$langs->trans("Home");
 
 	if (empty($noout)) print_start_menu_entry($idsel,$itemsel,$showmode);
-	if (empty($noout)) print_text_menu_entry($chaine, 1, DOL_URL_ROOT.'/index.php?mainmenu=home&amp;leftmenu=', $id, $idsel, $atarget);
+	if (empty($noout)) print_text_menu_entry($chaine, 1, $landingpage, $id, $idsel, $atarget);
 	if (empty($noout)) print_end_menu_entry($showmode);
-	$menu->add('/index.php?mainmenu=home&amp;leftmenu=', $chaine, 0, $showmode, $atarget, "home", '');
+	$menu->add($landingpage, $chaine, 0, $showmode, $atarget, "home", '');
 
 	// Members
 	$tmpentry = array(
