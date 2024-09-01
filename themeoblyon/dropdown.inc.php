@@ -425,7 +425,9 @@ if (! defined('ISLOADEDBYSTEELSHEET')) die('Must be call by steelsheet'); ?>
         right:10px;	/* will be set with js */
         background: #fff;
         border: 1px solid #bbb;
-        text-align: <?php echo $left; ?>
+        text-align: <?php echo $left; ?>;
+        -webkit-box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+        box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
     }
 
     .dropdown-content a {
@@ -438,6 +440,7 @@ if (! defined('ISLOADEDBYSTEELSHEET')) die('Must be call by steelsheet'); ?>
     }
     .dropdown-content a.butAction {
         display: flex;
+        background-color: unset !important;
     }
     .dropdown-content .butAction:hover {
         box-shadow: none;
@@ -451,6 +454,21 @@ if (! defined('ISLOADEDBYSTEELSHEET')) die('Must be call by steelsheet'); ?>
 
     .dropdown-holder.open .dropdown-content {
         display: block;
+    }
+
+    /** dropdown arrow used to clearly identify parent button of dropdown*/
+    .dropdown-holder.open .dropdown-content::before {
+        --triangleBorderSize : 5px;
+        position: absolute;
+        content: "";
+        top: calc(var(--triangleBorderSize) * -1);
+        right: 12px;
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 0 var(--triangleBorderSize) var(--triangleBorderSize) var(--triangleBorderSize);
+        border-color: transparent transparent #ffff transparent;
+        transform: rotate(0deg);
     }
 
     /*
