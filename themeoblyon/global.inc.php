@@ -2753,7 +2753,7 @@ div.attachareaformuserfileecm {
 div.arearef {
 <?php if (!empty($conf->global->FIX_AREAREF_TABACTION)) { ?>
 	position: sticky;
-    z-index: 94;
+    z-index: 4;
 	<?php if (!empty($conf->global->MAIN_MENU_INVERT)) { ?>
 	top: 40px;
 	<?php } else { ?>
@@ -5112,6 +5112,7 @@ div.tabsAction {
     text-align: <?php print $right; ?>;
 <?php if (!empty($conf->global->FIX_AREAREF_TABACTION)) { ?>
 	position: sticky;
+    z-index: 4;
 	bottom: 0;
 	<?php if (GETPOST("optioncss") == 'print') {	?>
     background-color: #fff !important;
