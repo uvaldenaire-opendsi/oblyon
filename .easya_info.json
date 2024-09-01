@@ -1,5 +1,6 @@
 {
-    "dol_min": 18,
-    "dol_max": 19,
-	"php_min": 7
+    "dlb_min_version": 18,
+    "dlb_max_version": 18,
+    "php_min_version": 7.0,
+    "php_max_version": 8.2
 }

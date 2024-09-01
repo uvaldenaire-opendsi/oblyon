@@ -33,6 +33,8 @@
 	--colortopbordertitle1: rgb(<?php print $colortopbordertitle1; ?>);
 	--listetotal: #888888;
 	--inputbackgroundcolor: <?php echo $colorBckgrdInput; ?>;
+	--color1BckgrdInfobox: <?php echo $color1BckgrdInfobox; ?>;
+	--color2BckgrdInfobox: <?php echo $color2BckgrdInfobox; ?>;
 	--inputbordercolor: rgba(0,0,0,.15);
 	--tooltipbgcolor: <?php print $toolTipBgColor; ?>;
 	--tooltipfontcolor : <?php print $toolTipFontColor; ?>;
@@ -2751,7 +2753,7 @@ div.attachareaformuserfileecm {
 div.arearef {
 <?php if (!empty($conf->global->FIX_AREAREF_TABACTION)) { ?>
 	position: sticky;
-    z-index: 94;
+    z-index: 4;
 	<?php if (!empty($conf->global->MAIN_MENU_INVERT)) { ?>
 	top: 40px;
 	<?php } else { ?>
@@ -5110,6 +5112,7 @@ div.tabsAction {
     text-align: <?php print $right; ?>;
 <?php if (!empty($conf->global->FIX_AREAREF_TABACTION)) { ?>
 	position: sticky;
+    z-index: 4;
 	bottom: 0;
 	<?php if (GETPOST("optioncss") == 'print') {	?>
     background-color: #fff !important;
@@ -10123,6 +10126,28 @@ span.clipboardCPValue.hidewithsize {
 
 .clipboardCPShowOnHover .clipboardCPButton {
 	display: none;
+}
+
+/* ============================================================================== */
+/* Drag & drop card feature                                                       */
+/* ============================================================================== */
+.cssDragDropArea {
+    position: relative;
+}
+.highlightDragDropArea {
+    border: 2px #000 dashed !important;
+    background-color: #bbbbbb !important;
+}
+.highlightDragDropArea * :not(.dragDropAreaMessage *) {
+    opacity:0.7;
+    filter: blur(3px) grayscale(100%);
+}
+.dragDropAreaMessage {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    text-align:center;
 }
 
 /* ============================================================================== */

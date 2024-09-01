@@ -1,5 +1,15 @@
 ## Changelog ##
 
+### Version 3.0.5 - Compatibility 14.0.x - 20.0.x (2024/09/01)
+- Fix Z-index with option FIX_AREAREF_TABACTION activated
+- Add Use specific landing page to home menu entry (Thanks Christophe from Altairis)
+- Fix display of new dropdown action button 
+
+### Version 3.0.4 - Compatibility 14.0.x - 20.0.x (2024/07/03)
+- Add CSS for drag & drop card feature
+- Fix menu orders (customer and supplier), problem on search_billed
+- If Easya version detected, force json information for dlb_min_version & php_min_version
+
 ### Version 3.0.3 - Compatibility 14.0.x - 20-alpha (2024/05/24)
 - Fix Contract expired services menu link (From Dolibarr 18.0.x)
 - FIX can not show group when MULTICOMPANY_TRANSVERSE_MODE
