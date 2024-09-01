@@ -1,5 +1,10 @@
 ## Changelog ##
 
+### Version 3.0.5 - Compatibility 14.0.x - 20.0.x (2024/09/01)
+- Fix Z-index with option FIX_AREAREF_TABACTION activated
+- Add Use specific landing page to home menu entry (Thanks Christophe from Altairis)
+- Fix display of new dropdown action button 
+
 ### Version 3.0.4 - Compatibility 14.0.x - 20.0.x (2024/07/03)
 - Add CSS for drag & drop card feature
 - Fix menu orders (customer and supplier), problem on search_billed
