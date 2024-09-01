@@ -50,7 +50,7 @@ function print_oblyon_menu($db, $atarget, $type_user = 0, &$tabMenu, &$menu, $no
 	$mainmenu = (empty($_SESSION["mainmenu"]) ? '' : $_SESSION["mainmenu"]);
 	$leftmenu = (empty($_SESSION["leftmenu"]) ? '' : $_SESSION["leftmenu"]);
 
-	$landingpage = (empty($user->conf->MAIN_LANDING_PAGE) ? (!getDolGlobalString('MAIN_LANDING_PAGE') ? '' : $conf->global->MAIN_LANDING_PAGE) : $user->conf->MAIN_LANDING_PAGE);
+	$landingpage = (!getDolUserString('MAIN_LANDING_PAGE') ? (!getDolGlobalString('MAIN_LANDING_PAGE') ? '' : getDolGlobalString('MAIN_LANDING_PAGE')) : getDolUserString('MAIN_LANDING_PAGE'));
 	if (! empty($landingpage)) {
 		$landingpage = dol_buildpath($landingpage, 1);
 	} else {
