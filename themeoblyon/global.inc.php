@@ -2755,9 +2755,9 @@ div.arearef {
 	position: sticky;
     z-index: 4;
 	<?php if (!empty($conf->global->MAIN_MENU_INVERT)) { ?>
-	top: 40px;
+	top: 42px;
 	<?php } else { ?>
-	top: 52px;
+	top: 42px;
 	<?php } ?>
 	background: inherit;
     padding-bottom: 20px;
